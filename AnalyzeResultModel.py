@@ -1,9 +1,14 @@
+import json
+
 class Result:
     def __init__(self):
         self.DateTaken = None
         self.Location = None
         self.Tags = []
         self.Caption = None
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys = True, indent = 4)
 
 class Location:
     def __init__(self):
