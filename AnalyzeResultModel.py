@@ -1,4 +1,5 @@
 import json
+from enum import Enum
 
 class Result:
     def __init__(self):
@@ -16,6 +17,7 @@ class Location:
         self.State = None
         self.County = None
         self.City = None
+        self.PostalCode = None
 
 class Tag:
     def __init__(self):
@@ -27,3 +29,9 @@ class Caption:
         self.Title = None
         self.IsPositive = None
         self.Confidence = None
+
+class LocationLevel(Enum):
+    State = 1
+    County = 2
+    City = 3
+    PostCode = 4
